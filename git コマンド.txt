@@ -1,0 +1,7 @@
+git clone -d branch origin 
+git add .
+git add [ファイル名]
+git commit -m "コメント"
+git push origin branch
+※origin ＝　URLでOK
+対象のフォルダは最初に初期化する必要あり
