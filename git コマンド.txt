@@ -4,4 +4,10 @@ git add [ファイル名]
 git commit -m "コメント"
 git push origin branch
 ※origin ＝　URLでOK
+git reset HEAD ファイルパス
+git checkout -b ブランチ名　：　ブランチの作成
+git checkout -d ブランチ名　：　ブランチの削除
+git checkout ブランチ名　：　ブランチの切替
+git checkout HEAD ファイルパス
+
 対象のフォルダは最初に初期化する必要あり
