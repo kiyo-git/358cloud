@@ -11,3 +11,7 @@ git checkout ブランチ名　：　ブランチの切替
 git checkout HEAD ファイルパス
 
 対象のフォルダは最初に初期化する必要あり
+
+
+nginx/buildspec-prd.yml
+buildspec-prd.yml
