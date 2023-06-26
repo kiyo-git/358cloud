@@ -1,0 +1,40 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 476648046402.dkr.ecr.ap-northeast-1.amazonaws.com
+      - REPOSITORY_URI=476648046402.dkr.ecr.ap-northeast-1.amazonaws.com/portfolio-nginx  
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - cd nginx
+      - cat default.conf
+      - docker build -t $REPOSITORY_URI:$IMAGE_TAG .
+      - docker tag $REPOSITORY_URI:$IMAGE_TAG $REPOSITORY_URI:$IMAGE_TAG
+      - docker tag $REPOSITORY_URI:$IMAGE_TAG $REPOSITORY_URI:latest
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - docker push $REPOSITORY_URI:latest
+      - echo Writing image definitions file...
+      - printf '{"ImageURI":"%s"}' $REPOSITORY_URI:$IMAGE_TAG > $CODEBUILD_SRC_DIR/imageDetail.json
+      - ls -l $CODEBUILD_SRC_DIR
+
+# artifacts:
+#   files:
+
+
+cache:
+  paths:
+    - '/root/.composer/cache/**/*'
