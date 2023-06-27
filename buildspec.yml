@@ -38,4 +38,4 @@ phases:
 
 artifacts:
   files:
-    - src/public/**/**/**/*
+    - pist6/public/**/**/**/*

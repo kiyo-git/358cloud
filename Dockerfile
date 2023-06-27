@@ -28,7 +28,7 @@ COPY . /var/www/html
 COPY php.ini /usr/local/etc/php/php.ini
 
 # Set working directory
-WORKDIR /var/www/html
+WORKDIR /var/www/html/pist6
 
 # Copy env
 # COPY .env.stg .env
@@ -48,7 +48,7 @@ RUN npm install && \
     php artisan key:generate
 
 # Change user and group ownership
-RUN chown -R www-data:www-data /var/www/html/src
+RUN chown -R www-data:www-data /var/www/html/pist6
 
 # Expose port
 EXPOSE 9000
