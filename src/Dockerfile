@@ -28,7 +28,7 @@ COPY . /var/www/html
 COPY php.ini /usr/local/etc/php/php.ini
 
 # Set working directory
-WORKDIR /var/www/html/src
+WORKDIR /var/www/html
 
 # Copy env
 # COPY .env.stg .env
