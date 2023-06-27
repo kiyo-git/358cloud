@@ -2,7 +2,7 @@ server {
   listen 80;
   server_name localhost;
   index index.php;
-  root /var/www/html/pist6/public;
+  root /var/www/html/src/public;
   charset utf-8;
 
   location / {

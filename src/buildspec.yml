@@ -16,7 +16,7 @@ phases:
       - echo Build started on `date`
       - ls -l $CODEBUILD_SRC_DIR
       - pwd
-      # - cd pist6
+      - cd pist6
       # - \cp -f .env.prd .env
       - npm install
       - npm run build

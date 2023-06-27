@@ -1,0 +1,199 @@
+/* 共通ファイルCSS */
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.header {
+    display: block;
+    padding: 26px 0;
+    background-color:rgb(241, 241, 241);
+    border-bottom: 2px solid darkgrey;
+}
+
+.wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-title {
+    padding-left: 1%;
+}
+
+.header-title span {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.profile-menu {
+    padding-right: 2%;
+    width: 8%;
+}
+
+.invisible-profile-sub-menu {
+    display: none;
+    border: 1px solid darkgrey;
+    margin-left: -30px;
+    width: 120px;
+    line-height: 50px;
+    position: absolute;
+    background: rgb(241, 241, 241);
+}
+
+.invisible-profile-sub-menu li {
+    text-align: center;
+}
+
+.visible-profile-sub-menu {
+    display: block;
+    border: 1px solid darkgrey;
+    margin-left: -30px;
+    width: 120px;
+    line-height: 50px;
+    position: absolute;
+    background: rgb(241, 241, 241);
+}
+
+.visible-profile-sub-menu li {
+    text-align: center;
+}
+
+.arrow {
+    position: relative;
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+}
+
+.arrow::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-top: solid 2px #5070e3;
+    border-right: solid 2px #5070e3;
+    position: absolute;
+    left: 5px;
+    top: 2px;
+}
+
+.arrow.arrow-top::before {
+    transform: rotate(-45deg);
+    top: 10px;
+}
+
+.arrow.arrow-bottom::before {
+    transform: rotate(135deg);
+}
+
+.material-symbols-outlined.large-size {
+    font-size: 42px;
+    color: #5070e3;
+}
+
+.sidebar {
+    left: 0;
+    background-color: rgb(241, 241, 241);
+    width: 400px;
+    height: 100%;
+}
+
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    color:rgb(24, 151, 255);
+    font-size:20px;
+    font-weight: bold;
+    padding-left: 30px;
+    border-bottom: 2px solid rgb(168, 168, 168, 0.3);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.flex-content {
+    flex-grow: 1;
+    margin: 3%;
+}
+
+.content-title {
+    margin-bottom: 5%;
+    font-size: 2em;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(168, 168, 168, 0.3);
+}
+
+.table-list {
+    border: 2px solid rgb(168, 168, 168, 0.3);
+}
+
+.table-list thead {
+    border: 2px solid rgb(168, 168, 168, 0.3);
+    line-height: 50px;
+}
+
+.form-content {
+    border-top: 2px solid rgb(168, 168, 168, 0.3);
+    border-left: 2px solid rgb(168, 168, 168, 0.3);
+    border-right: 2px solid rgb(168, 168, 168, 0.3);
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid rgb(168, 168, 168, 0.3);
+    align-items:center;
+    height: 80px;
+}
+
+.form-group-label {
+    width: 40%;
+    text-align:left;
+    padding-left: 100px;
+}
+
+.form-group-input {
+    width: 100%;
+    margin-left: 5%;
+}
+
+.primary-button {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(101 163 13);
+}
+
+.danger-button {
+    width: 150px;
+    height: 50px;
+    background-color: red;
+}
+
+.secondary-button {
+    width: 150px;
+    height: 50px;
+}
+
+.error-text {
+    color: red;
+}
